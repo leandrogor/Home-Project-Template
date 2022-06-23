@@ -13,10 +13,12 @@ namespace PlantillaInicioProyecto
 {
     public partial class MainForm : Form
     {
-        public MainForm(Usuario usu)
+        private LoginForm loginForm;
+        public MainForm(Usuario usu, LoginForm loginForm)
         {
             InitializeComponent();
             lblUsIngresado.Text = "Usuario ingresado: " + usu.NombreDeUsuario;
+            this.loginForm = loginForm;
         }
 
         private void fechaHora_Tick(object sender, EventArgs e)
@@ -26,7 +28,7 @@ namespace PlantillaInicioProyecto
 
         private void salirDelSistemaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            loginForm.Close();
         }
     }
 }

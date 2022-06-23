@@ -44,7 +44,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(32, 106);
+            this.pictureBox1.Location = new System.Drawing.Point(20, 106);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(114, 114);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -138,7 +138,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(64)))), ((int)(((byte)(68)))));
-            this.ClientSize = new System.Drawing.Size(650, 278);
+            this.ClientSize = new System.Drawing.Size(551, 278);
             this.Controls.Add(this.botonLimpiar);
             this.Controls.Add(this.botonAcceder);
             this.Controls.Add(this.boxContrasenia);

@@ -54,15 +54,15 @@ namespace PlantillaInicioProyecto
 
             if (noEstanVacios(usuarioCargado, contraCargada))
             {
-                string usuario = System.Configuration.ConfigurationManager.AppSettings["User"];
-                string contra = System.Configuration.ConfigurationManager.AppSettings["Pass"];
+                string usuario = System.Configuration.ConfigurationManager.AppSettings["User0"];
+                string contra = System.Configuration.ConfigurationManager.AppSettings["Pass0"];
 
                 if (esUsuarioCorrecto(usuarioCargado, usuario, contraCargada, contra))
                 {
                     MessageBox.Show("Datos validados, bienvenido al sistema!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     Usuario usu = new Usuario(usuarioCargado, contraCargada);
-                    MainForm ventana = new MainForm(usu);
+                    MainForm ventana = new MainForm(usu, this);
                     Hide();
                     ventana.Show();
 
@@ -70,9 +70,11 @@ namespace PlantillaInicioProyecto
                 else
                 {
                     DialogResult res = MessageBox.Show("Datos incorrectos!", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                    boxContrasenia.Focus();
                     if (res == DialogResult.Cancel)
                     {
                         LimpiarCampos();
+                        boxUsuario.Focus();
                     }
                 }
                 
@@ -80,12 +82,14 @@ namespace PlantillaInicioProyecto
             else
             {
                 MessageBox.Show("Por favor, ingrese todos los campos!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                boxUsuario.Focus();
             }
         }
 
         private void botonLimpiar_Click(object sender, EventArgs e)
         {
             LimpiarCampos();
+            boxUsuario.Focus();
         }
     }
 }
